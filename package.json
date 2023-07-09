@@ -1,0 +1,34 @@
+{
+    "name": "tools-fns",
+    "version": "1.0.0",
+    "description": "An Open Source Library Gives You Small Helper Function To Help you be more productive",
+    "main": "lib/esm/index.mjs",
+    "module": "lib/esm/index.mjs",
+    "types": "lib/index.d.ts",
+    "exports": {
+        "types": "./lib/index.d.ts",
+        "import": "./lib/esm/index.mjs",
+        "require": "./lib/cjs/index.cjs"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "keywords": [
+        "Js",
+        "Ts",
+        "ES modules",
+        "Debounce",
+        "Cookies",
+        "Notification",
+        "Location",
+        "qrcode",
+        "Helpers",
+        "tools-fns"
+    ],
+    "author": "Anas Maher",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.3.1",
+        "typescript": "^5.1.3"
+    }
+}
