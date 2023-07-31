@@ -1,11 +1,10 @@
-const RandomQuote = async ():Promise<{quote:object , quote_content:string}> => {
-    try {
-        const res = await fetch("https://api.quotable.io/random");
-        const data = await res.json();
-        const quote = await data;
-        return { quote,  quote_content : quote.content };
-    } catch (err) {
-        throw new Error(`Err Occurred \n\n ${err}`);
-    }
+import { Quote } from "../types";
+
+const RandomQuote = async () => {
+    const res = await fetch("https://api.quotable.io/random");
+    const quote: Quote = await res.json();
+    //implement handle status code
+    return quote;
 };
+
 export default RandomQuote;

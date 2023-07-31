@@ -1,0 +1,8 @@
+HandleFetchStatus ==> try_error
+CustomFetch
+json types
+check for maps in json types  
+improve types for cookies and others
+top level await 
+.d.ts files 
+better regex

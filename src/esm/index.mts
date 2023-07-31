@@ -9,9 +9,8 @@ import IsColor from "./IsColor.mjs";
 import Hello from "./Hello.mjs";
 import Debounce from "./Debounce.mjs";
 import Throttle from "./Throttle.mjs";
-import Converter from "./Converter.mjs";
+import Parser from "./Parser.mjs";
 import PushNotification from "./PushNotification.mjs";
-import QrCode from "./QRCode.mjs";
 import Capitalize from "./Capitalize.mjs";
 
 export {
@@ -27,7 +26,6 @@ export {
     RandomString,
     IsColor,
     Hello,
-    Converter,
+    Parser,
     PushNotification,
-    QrCode,
 };

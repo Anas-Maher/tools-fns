@@ -1,7 +1,6 @@
-import { AddCookie } from "../../lib/index.js";
-
-const DeleteCookie = (name: string): void => {
-    AddCookie(name, "", "0", "0", "2020");
+const DeleteCookie = (key: string): void => {
+    const date = new Date(2020, 1, 1, 1);
+    document.cookie = `${key}='';expires=${date};path="/";SameSite="strict"`;
 };
 
 export default DeleteCookie;

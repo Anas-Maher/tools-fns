@@ -1,4 +1,4 @@
-import { Greeting } from "../../lib";
+import { Greeting } from "../types";
 const Hello = (): Greeting => {
     const Hellos: Greeting[] = [
         "Good Morning",
@@ -6,8 +6,7 @@ const Hello = (): Greeting => {
         "Good evening",
     ];
     const Hour = new Date().getHours();
-    const time =
-        Hour >= 12 && Hour < 17 ? 1 : Hour >= 17 ? 2 : 0;
+    const time = Hour >= 12 && Hour < 17 ? 1 : Hour >= 17 ? 2 : 0;
     return Hellos[time];
 };
 

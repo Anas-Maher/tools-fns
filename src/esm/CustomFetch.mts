@@ -1,15 +1,88 @@
-// @ts-nocheck
-async function CustomFetch<T>(): Promise<T | void> {
+import { RequestData } from "../types/types";
+
+const CustomFetch = async function <T>(request: RequestData<T>) {
     try {
-        'url'.toString().toString().toString()
         const controller = new AbortController();
-        const req = await fetch(url, {
-            signal: controller.signal,
-        });
-        controller.abort()
-        await req.json();
-    } catch (error) { }
-}
+        // .then .catch and try-error and return ex. json blob etc.
+        switch (request.method) {
+            case "GET": {
+                return fetch(request.url, {
+                    cache: request.cache,
+                    headers: request.headers,
+                    signal: controller.signal,
+                    method: request.method,
+                })
+                    .then((res) =>
+                        /*throw fetch error func and try-error*/ res.json()
+                    )
+                    .finally(() => {
+                        controller.abort();
+                    });
+            }
+            case "PATCH": {
+                return fetch(request.url, {
+                    cache: request.cache,
+                    headers: request.headers,
+                    signal: controller.signal,
+                    method: request.method,
+                })
+                    .then((res) =>
+                        /*throw fetch error func and try-error*/ res.json()
+                    )
+                    .finally(() => {
+                        controller.abort();
+                    });
+            }
+            case "DELETE": {
+                return fetch(request.url, {
+                    cache: request.cache,
+                    headers: request.headers,
+                    signal: controller.signal,
+                    method: request.method,
+                })
+                    .then((res) =>
+                        /*throw fetch error func and try-error*/ res.json()
+                    )
+                    .finally(() => {
+                        controller.abort();
+                    });
+            }
+            case "POST": {
+                return fetch(request.url, {
+                    cache: request.cache,
+                    headers: request.headers,
+                    signal: controller.signal,
+                    method: request.method,
+                })
+                    .then((res) =>
+                        /*throw fetch error func and try-error*/ res.json()
+                    )
+                    .finally(() => {
+                        controller.abort();
+                    });
+            }
+            case "PUT": {
+                return fetch(request.url, {
+                    cache: request.cache,
+                    headers: request.headers,
+                    signal: controller.signal,
+                    method: request.method,
+                })
+                    .then((res) =>
+                        /*throw fetch error func and try-error*/ res.json()
+                    )
+                    .finally(() => {
+                        controller.abort();
+                    });
+            }
+            default: {
+                throw new Error("Unsupported Request");
+            }
+        }
+    } catch (err: unknown) {
+        const error = err as Error;
+        throw new Error(error?.message, { cause: error?.cause });
+    }
+};
 
-
-export default CustomFetch
+export default CustomFetch;

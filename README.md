@@ -1,13 +1,9 @@
-# Welcome Again To **"tools-fns"**
+# `Tools-Fns`
 
 ## An Open Source Library Gives You Small Helper Function To Help you be more productive
 
-### **Warning:** Make Sure To Download The Latest Versions , Because We Are Constantly Fixing Errors And Adding Types
-
-### Yet Not All Types Are Ready
-
-### When You Use This library You won't Get Intellisense On Every Thing This Will Be Fixed Soon Stay Tuned
+### Usage Example :  This Will Be Implemented Later
 
 ---
 
-### If You Have Any Suggestions or bugs Please Email Me Here **_<anas.npmjs@gmail.com>_**
+#### For Contributing Email Here *<anas.npmjs@gmail.com>*
