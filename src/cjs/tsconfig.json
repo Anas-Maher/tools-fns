@@ -11,7 +11,7 @@
         "moduleResolution": "Node" /* Specify how TypeScript looks up a file from a given module specifier. */,
         "types": [
             "node",
-            "../types/index.d.ts"
+            "../../lib/types/index.d.ts"
         ] /* Specify type package names to be included without being referenced in a source file. */,
         /* JavaScript Support */
         "allowJs": true /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */,
