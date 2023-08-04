@@ -4,9 +4,9 @@
     "description": "An Open Source Library Gives You Small Helper Function To Help you be more productive",
     "main": "./lib/esm/index.mjs",
     "module": "./lib/esm/index.mjs",
-    "types": "./lib/index.d.ts",
+    "types": "./lib/types/index.d.ts",
     "exports": {
-        "types": "./lib/index.d.ts",
+        "types": "./lib/types/index.d.ts",
         "import": "./lib/esm/index.mjs",
         "require": "./lib/cjs/index.cjs"
     },
