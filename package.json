@@ -28,8 +28,9 @@
     "author": "Anas Maher",
     "license": "ISC",
     "scripts": {
-        "test": "cd ./src/esm && tsc && cd ../ && tsc && cd ../esm" ,
-         "dev" : "git add --all && git commit -m \"Next Is Better\" && git push"
+        "test": "cd ./src/cjs && tsc && cd ../esm && tsc && cd ../../",
+        "dev": "git add --all && git commit -m \"Testing\" && git push",
+        "publish": "git switch main && git merge && npm publish"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",

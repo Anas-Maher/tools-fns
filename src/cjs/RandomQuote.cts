@@ -1,5 +1,5 @@
 import { Quote } from "../types";
-import ErrorCode from "./ErrorCode.mjs";
+import ErrorCode from "./ErrorCode.cjs";
 
 const RandomQuote = async (): Promise<Quote> => {
     try {

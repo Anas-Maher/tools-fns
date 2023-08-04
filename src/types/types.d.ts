@@ -17,7 +17,7 @@ export interface Quote {
     dateAdded: string;
     dateModified: string;
 }
-export type Valid_Json<T> = Map<string, T> | Set<T> | T[] | object;
+export type ValidJson<T> = Map<string, T> | Set<T> | T[] | object;
 export type ShortNotification = {
     long: false;
 };
@@ -37,7 +37,7 @@ export type CookieStyle = { key: string; value: string } & (
     | SmallCookie
 );
 export type Greeting = "Good Morning" | "Good Afternoon" | "Good evening";
-export type Func<T> = (...args: T[]) => T;
+export type Fn<R = any, T = any> = (...args: T[]) => R;
 export type DeepReadonly<T> = T extends Primitives
     ? T
     : T extends Array<infer U>
@@ -55,25 +55,23 @@ export interface DeepReadonlyArray<T> extends ReadonlyArray<DeepReadonly<T>> {}
 export type DeepReadonlyObject<T> = {
     readonly [P in keyof T]: DeepReadonly<T[P]>;
 };
-export interface DownloadElement {
-    Download(): HTMLAnchorElement;
-}
+
 export type SimpleRequest = {
     method: "GET";
 };
 
 export type HeavyRequest<T> = {
     method: "PUT" | "POST" | "DELETE" | "PATCH";
-    body: Valid_Json<T>;
+    body: ValidJson<T>;
 };
 
-export type Data = {
+export type ConsentientData = {
     url: RequestInfo | URL;
     cache: RequestCache;
     headers: HeadersInit | undefined;
 };
 
-export type RequestData<T> = Data & (SimpleRequest | HeavyRequest<T>);
+export type FetchRequest<T> = ConsentientData & (SimpleRequest | HeavyRequest<T>);
 export interface HomeLocation {
     place_id: number;
     licence: string;

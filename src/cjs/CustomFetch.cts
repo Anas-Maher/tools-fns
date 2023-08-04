@@ -1,6 +1,6 @@
 import { FetchRequest } from "../types";
-import ErrorCode from "./ErrorCode.mjs";
-import Stringify from "./Stringify.mjs";
+import ErrorCode from "./ErrorCode.cjs";
+import Stringify from "./Stringify.cjs";
 const CustomFetch = async function <T, S>(
     request: FetchRequest<T>
 ): Promise<S> {

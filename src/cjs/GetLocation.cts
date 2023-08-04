@@ -1,5 +1,5 @@
 import { DeepReadonly, Fn, HomeLocation } from "../types";
-import ErrorCode from "./ErrorCode.mjs";
+import ErrorCode from "./ErrorCode.cjs";
 const GetLocation = (): ReturnType<Fn<void>> => {
     return navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude: lat, longitude: long } = position.coords;

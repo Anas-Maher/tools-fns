@@ -1,6 +1,6 @@
-import { Valid_Json } from "../types";
+import { ValidJson } from "../types";
 
-const Stringier = function <T>(obj: Valid_Json<T>): string {
+const Stringify = function <T>(obj: ValidJson<T>): string {
     return JSON.stringify(
         obj,
         (_, value) => {
@@ -23,4 +23,4 @@ const Stringier = function <T>(obj: Valid_Json<T>): string {
     );
 };
 
-export default Stringier;
+export default Stringify;
