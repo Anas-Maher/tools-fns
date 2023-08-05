@@ -1,4 +1,4 @@
-import { NotificationStyle } from "../types";
+import { NotificationStyle } from "../../lib/types";
 
 const PushNotification = async (
     notification: NotificationStyle

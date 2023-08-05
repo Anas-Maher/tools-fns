@@ -1,4 +1,4 @@
-import { FetchRequest } from "../types";
+import { FetchRequest } from "../../lib/types";
 import ErrorCode from "./ErrorCode.mjs";
 import Stringify from "./Stringify.mjs";
 const CustomFetch = async function <T, S>(

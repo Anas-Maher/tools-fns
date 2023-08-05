@@ -1,4 +1,4 @@
-import { Quote } from "../types";
+import { Quote } from "../../lib/types";
 import ErrorCode from "./ErrorCode.cjs";
 
 const RandomQuote = async (): Promise<Quote> => {

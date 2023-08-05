@@ -1,6 +1,7 @@
-import { ValidJson } from "../types";
+import { ValidJson } from "../../lib/types";
+import Stringify from "./Stringify.cjs";
 const Parser = <T, S>(obj: ValidJson<T>): S => {
-    return JSON.parse(Parser(obj), (_, value) => {
+    return JSON.parse(Stringify(obj), (_, value) => {
         if (Array.isArray(value)) return new Set(value);
         if (value != null && typeof value === "object")
             return new Map(Object.entries(value));

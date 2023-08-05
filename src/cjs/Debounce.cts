@@ -1,4 +1,4 @@
-import { Fn } from "../types";
+import { Fn } from "../../lib/types";
 function Debounce(callback: Fn, delay = 1200): Fn<void> {
     let ID: string | number | NodeJS.Timeout | undefined;
     return (...args: any[]) => {

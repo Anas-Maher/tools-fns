@@ -1,4 +1,4 @@
-import { ValidJson } from "../types";
+import { ValidJson } from "../../lib/types";
 
 const Stringify = function <T>(obj: ValidJson<T>): string {
     return JSON.stringify(

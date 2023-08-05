@@ -1,4 +1,4 @@
-import { DeepReadonly, Fn, HomeLocation } from "../types";
+import { DeepReadonly, Fn, HomeLocation } from "../../lib/types";
 import ErrorCode from "./ErrorCode.mjs";
 const GetLocation = (): ReturnType<Fn<void>> => {
     return navigator.geolocation.getCurrentPosition(async (position) => {

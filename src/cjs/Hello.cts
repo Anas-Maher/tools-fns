@@ -1,4 +1,4 @@
-import { Greeting } from "../types";
+import { Greeting } from "../../lib/types";
 const Hello = (): Greeting => {
     const Hellos: Greeting[] = [
         "Good Morning",

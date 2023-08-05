@@ -1,5 +1,5 @@
-import { CookieStyle } from "../types";
-const AddCookie = (cookie: CookieStyle):void => {
+import { CookieStyle } from "../../lib/types";
+const AddCookie = (cookie: CookieStyle): void => {
     if (!navigator.cookieEnabled) {
         throw new Error(`Cookies Is Not Allowed`);
     }

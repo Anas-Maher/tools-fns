@@ -1,4 +1,4 @@
-import { Fn } from "../types";
+import { Fn } from "../../lib/types";
 function Throttle(callback: Fn, delay = 1200): Fn<void> {
     let stop = false;
     let wait: any[] | null;
