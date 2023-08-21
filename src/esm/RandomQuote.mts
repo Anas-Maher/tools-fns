@@ -1,7 +1,7 @@
-import { Quote } from "../../lib/types";
+import { ErrorMessage, Quote } from "../../lib/types";
 import ErrorCode from "./ErrorCode.mjs";
 
-const RandomQuote = async (): Promise<Quote> => {
+const RandomQuote = async (): Promise<Quote | ErrorMessage> => {
     try {
         const res = await fetch("https://api.quotable.io/random");
         if (!res.ok) {

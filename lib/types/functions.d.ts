@@ -1,5 +1,6 @@
 import {
     CookieStyle,
+    ErrorMessage,
     FetchRequest,
     Fn,
     Greeting,
@@ -8,12 +9,10 @@ import {
     ValidJson,
 } from "./types";
 export declare const AddCookie: (cookie: CookieStyle) => void;
-export declare function Capitalize(word: string): string;
-
 export declare function Capitalize(
     word: string,
-    sep: string,
-    join: string
+    sep?: string,
+    join?: string
 ): string;
 export declare const CssColor: (color: string) => boolean;
 export declare const CustomFetch: <T, S>(
@@ -25,7 +24,7 @@ export declare const GetLocation: () => ReturnType<Fn<void>>;
 export declare const Hello: () => Greeting;
 export declare const PushNotification: (
     notification: NotificationStyle
-) => Promise<Notification>;
+) => Promise<Notification | ErrorMessage>;
 export declare const RandomHex: () => string;
 export declare const RandomQuote: () => Promise<Quote>;
 export declare const RandomString: (length: number) => string;
@@ -35,4 +34,4 @@ export declare const DeleteCookie: (name: string) => void;
 export declare const GetCookie: (key: string) => string;
 export declare const Parser: <T, S>(obj: ValidJson<T>) => S;
 export declare const Stringify: <T>(obj: ValidJson<T>) => string;
-export const TryError: (status: undefined | number) => never;
+export declare const ErrorCode: (status: number) => ErrorMessage;

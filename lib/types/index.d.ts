@@ -20,6 +20,9 @@ export {
     HomeLocation,
     FetchRequest,
     SimpleRequest,
+    Em1,
+    Em2,
+    ErrorMessage
 } from "./types";
 export {
     Capitalize,
@@ -38,5 +41,6 @@ export {
     CustomFetch,
     Parser,
     Stringify,
-    TryError,
+    ErrorCode,
+    
 } from "./functions";

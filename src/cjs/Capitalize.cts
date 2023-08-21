@@ -1,10 +1,7 @@
 function Capitalize(word: string, sep = " ", join = " "): string {
     const long_word = word.split(sep);
-    if ([sep, word, join].some((v) => typeof v !== "string")) {
-        throw new Error("args must be string");
-    }
     if (word.trim() === "") {
-        throw new Error("word must contain some letters");
+        return "";
     }
     if (word.length === 1) {
         return word.toUpperCase();
@@ -16,6 +13,7 @@ function Capitalize(word: string, sep = " ", join = " "): string {
         );
     }
     return long_word
+        .filter((v) => !!v.trim())
         .map(
             (sentence) =>
                 sentence.charAt(0).toUpperCase() +

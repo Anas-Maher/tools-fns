@@ -55,7 +55,17 @@ export interface DeepReadonlyArray<T> extends ReadonlyArray<DeepReadonly<T>> {}
 export type DeepReadonlyObject<T> = {
     readonly [P in keyof T]: DeepReadonly<T[P]>;
 };
+export type Em1 = {
+    message: string;
+    cause: number;
+};
 
+export type Em2 = {
+    message: string;
+    cause?: undefined;
+};
+
+export type ErrorMessage = Em1 | Em2;
 export type SimpleRequest = {
     method: "GET";
 };
@@ -67,11 +77,12 @@ export type HeavyRequest<T> = {
 
 export type ConsentientData = {
     url: RequestInfo | URL;
-    cache: RequestCache;
-    headers: HeadersInit | undefined;
+    cache?: RequestCache;
+    headers?: HeadersInit | undefined;
 };
 
-export type FetchRequest<T> = ConsentientData & (SimpleRequest | HeavyRequest<T>);
+export type FetchRequest<T> = ConsentientData &
+    (SimpleRequest | HeavyRequest<T>);
 export interface HomeLocation {
     place_id: number;
     licence: string;

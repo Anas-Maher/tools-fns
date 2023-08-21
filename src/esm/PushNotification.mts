@@ -3,10 +3,9 @@ import { NotificationStyle } from "../../lib/types";
 const PushNotification = async (
     notification: NotificationStyle
 ): Promise<Notification> => {
-    const { permission, requestPermission } = Notification;
     try {
-        await requestPermission();
-        switch (permission) {
+        await Notification.requestPermission();
+        switch (Notification.permission) {
             case "granted": {
                 if (!notification.long) {
                     return new Notification(notification.title, {
@@ -18,15 +17,11 @@ const PushNotification = async (
                     body: notification.body,
                 });
             }
-            case "default":
-                throw new Error(`Request Access First`);
-            case "denied":
-                throw new Error(`Request Access First`);
             default:
-                throw new Error(`unknown Error`);
+                throw new Error(`Access denied`);
         }
-    } catch (error) {
-        throw new Error(error?.toString());
+    } catch (error: any) {
+        throw new Error(error?.message);
     }
 };
 
