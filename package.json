@@ -1,6 +1,10 @@
 {
     "name": "tools-fns",
-    "version": "3.0.0",
+<<<<<<< HEAD
+    "version": "4.0.0",
+=======
+    "version": "4.0.0",
+>>>>>>> test
     "description": "An Open Source Library Gives You Small Helper Function To Help you be more productive",
     "main": "./lib/esm/index.mjs",
     "module": "./lib/esm/index.mjs",
