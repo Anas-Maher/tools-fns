@@ -29,8 +29,7 @@
     "license": "ISC",
     "scripts": {
         "test": "cd ./src/cjs && tsc && cd ../esm && tsc && cd ../../",
-        "dev": "git add --all && git commit -m \"Testing\" && git push",
-        "publish": "git switch main && git merge && npm publish"
+        "dev": "git add --all && git commit -m \"Testing\" && git push"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
