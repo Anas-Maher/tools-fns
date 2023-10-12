@@ -1,40 +1,25 @@
-import { CookieSameSite } from "../../lib";
-function AddCookie(
-    key: string,
-    value?: string,
-    day?: string,
-    monthIndex?: string,
-    year?: string,
-    path?: string,
-    SameSite?: CookieSameSite
-): void {
-    if (!navigator.cookieEnabled)
-        throw new Error(`Adding Cookies Is Not Allowed`);
-    value ??= "value";
-    path ??= "/";
-    day ??= "1";
-    monthIndex ??= "0";
-    year ??= "2030";
-    SameSite ??= "strict";
-    const params = [
-        key,
-        value,
-        day,
-        monthIndex,
-        year,
-        path,
-        SameSite,
-    ];
-    if (params.some((v) => typeof v !== "string"))
-        throw new Error(
-            `plz provide a string for the arguments`
-        );
-    let Expires = new Date(`${day}/${monthIndex}/${year}`);
-    if (Expires.toString().toLowerCase() == "invalid date")
-        throw new Error(
-            "Invalid Date Please Check The Date Provided"
-        );
-    document.cookie = `${key}=${value};expires=${Expires};path=${path};SameSite=${SameSite}`;
-}
+import { CookieStyle } from "../../lib/types";
+const AddCookie = (cookie: CookieStyle): void => {
+    if (!navigator.cookieEnabled) {
+        throw new Error(`Cookies Is Not Allowed`);
+    }
+    if (cookie.verbose) {
+        let { day, key, monthIndex, path, value, year, SameSite } = cookie;
+        path ??= "/";
+        day ??= 1;
+        monthIndex ??= 0;
+        year ??= 2030;
+        SameSite ??= "strict";
+        let Expires = new Date(year, monthIndex, day);
+        if (Expires.toString().toLowerCase() == "invalid date")
+            throw new Error("Invalid Date Please Check The Date Provided");
+        document.cookie = `${key}=${value};expires=${Expires};path=${path};SameSite=${SameSite}`;
+        return;
+    }
+    const { key, value } = cookie;
+    let Expires = new Date(2030, 1, 1);
+    document.cookie = `${key}=${value};expires=${Expires};path="/";SameSite="strict"`;
+    return;
+};
 
 export default AddCookie;

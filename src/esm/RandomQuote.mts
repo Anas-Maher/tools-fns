@@ -1,11 +1,17 @@
-const RandomQuote = async ():Promise<{quote:object , quote_content:string}> => {
+import { ErrorMessage, Quote } from "../../lib/types";
+import ErrorCode from "./ErrorCode.mjs";
+
+const RandomQuote = async (): Promise<Quote | ErrorMessage> => {
     try {
         const res = await fetch("https://api.quotable.io/random");
-        const data = await res.json();
-        const quote = await data;
-        return { quote,  quote_content : quote.content };
-    } catch (err) {
-        throw new Error(`Err Occurred \n\n ${err}`);
+        if (!res.ok) {
+            throw new Error("Bad Response", { cause: res.status });
+        }
+        const quote: Quote = await res.json();
+        return quote;
+    } catch (error: any) {
+        return ErrorCode(error?.cause);
     }
 };
+
 export default RandomQuote;

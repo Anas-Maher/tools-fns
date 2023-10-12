@@ -1,28 +1,28 @@
-function PushNotification(title: string,body: string,ID?: boolean,tag?: string): Notification | string {
-    const { permission, requestPermission } = Notification;
-    ID ??= true;
-    title ??= "Title";
-    body ??= "Body of the notification";
+import { NotificationStyle } from "../../lib/types";
+
+const PushNotification = async (
+    notification: NotificationStyle
+): Promise<Notification> => {
     try {
-        requestPermission();
-        if (permission === "granted") {
-            if (ID) {
-                return new Notification(title, {
-                    tag: tag ?? "ID",
-                    body: body,
+        await Notification.requestPermission();
+        switch (Notification.permission) {
+            case "granted": {
+                if (!notification.long) {
+                    return new Notification(notification.title, {
+                        body: notification.body,
+                    });
+                }
+                return new Notification(notification.title, {
+                    tag: notification.tag,
+                    body: notification.body,
                 });
             }
-            return new Notification(title, {
-                body: body,
-            });
+            default:
+                throw new Error(`Access denied`);
         }
-        if (permission === "default") {
-            throw new Error(`Didn't Deny Didn't Allow`);
-        }
-        throw new Error(`denied`);
-    } catch (err) {
-        throw new Error(`Err ${err}`);
+    } catch (error: any) {
+        throw new Error(error?.message);
     }
-}
+};
 
-export default PushNotification
+export default PushNotification;

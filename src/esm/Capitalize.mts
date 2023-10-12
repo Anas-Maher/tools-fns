@@ -1,20 +1,24 @@
-function Capitalize(word: string, sep?: string, join?: string) : string {
-    sep ??= ' '
-    join ??= ' '
-    const long_word = word.split(sep)
-    if ([sep, word, join].some((v) => typeof v !== "string")) {
-        throw new Error("args must be string");
-    }
+function Capitalize(word: string, sep = " ", join = " "): string {
+    const long_word = word.split(sep);
     if (word.trim() === "") {
-        throw new Error("word must contain some letters");
+        return "";
     }
     if (word.length === 1) {
         return word.toUpperCase();
     }
     if (long_word.length === 1) {
-        const sentence = long_word[0]
-        return sentence.charAt(0).toUpperCase() + sentence.slice(1).toLowerCase()
+        const sentence = long_word[0];
+        return (
+            sentence.charAt(0).toUpperCase() + sentence.slice(1).toLowerCase()
+        );
     }
-    return long_word.map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1).toLowerCase()).join(join)
+    return long_word
+        .filter((v) => !!v.trim())
+        .map(
+            (sentence) =>
+                sentence.charAt(0).toUpperCase() +
+                sentence.slice(1).toLowerCase()
+        )
+        .join(join);
 }
 export default Capitalize;

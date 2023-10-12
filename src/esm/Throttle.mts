@@ -1,13 +1,7 @@
-import { Func } from "../../lib";
-function Throttle(
-    callback: Func<unknown>,
-    delay?: number
-): Func<void> {
-    delay ??= 1200;
-    if (typeof delay !== "number")
-        throw new Error("delay must be a number");
+import { Fn } from "../../lib/types";
+function Throttle(callback: Fn, delay = 1200): Fn<void> {
     let stop = false;
-    let wait: unknown[] | null;
+    let wait: any[] | null;
     const func = () => {
         if (wait == null) {
             stop = false;
@@ -17,7 +11,7 @@ function Throttle(
             setTimeout(func, delay);
         }
     };
-    return (...args: unknown[]) => {
+    return (...args: any[]) => {
         if (stop) {
             wait = args;
             return;
@@ -28,13 +22,3 @@ function Throttle(
     };
 }
 export default Throttle;
-
-/*
-    "repository": {
-    "url": "https://github.com/Anas-Maher/npm_package.git"
-        },
-            "bugs": {
-        "url": "https://github.com/Anas-Maher/npm_package/issues"
-    },
-    "homepage": "https://github.com/Anas-Maher/npm_package/#readme",
-     */

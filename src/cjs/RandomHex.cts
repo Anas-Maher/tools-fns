@@ -1,4 +1,4 @@
-const RandomHex = (): string => {
+const RandomHex = () => {
     const Digits = [
         "1",
         "2",

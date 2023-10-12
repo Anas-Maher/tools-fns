@@ -5,17 +5,21 @@ import GetLocation from "./GetLocation.cjs";
 import RandomString from "./RandomString.cjs";
 import RandomQuote from "./RandomQuote.cjs";
 import RandomHex from "./RandomHex.cjs";
-import IsColor from "./IsColor.cjs";
+import CssColor from "./CssColor.cjs";
 import Hello from "./Hello.cjs";
 import Debounce from "./Debounce.cjs";
 import Throttle from "./Throttle.cjs";
-import Converter from "./Converter.cjs";
+import Parser from "./Parser.cjs";
 import PushNotification from "./PushNotification.cjs";
-import QrCode from "./QRCode.cjs";
 import Capitalize from "./Capitalize.cjs";
+import ErrorCode from "./ErrorCode.cjs";
+import Stringify from "./Stringify.cjs";
+import CustomFetch from "./CustomFetch.cjs";
 
 export {
     Capitalize,
+    ErrorCode,
+    CustomFetch,
     Debounce,
     Throttle,
     AddCookie,
@@ -25,9 +29,9 @@ export {
     RandomHex,
     RandomQuote,
     RandomString,
-    IsColor,
+    CssColor,
     Hello,
-    Converter,
+    Parser,
+    Stringify,
     PushNotification,
-    QrCode,
 };
