@@ -1,17 +1,18 @@
 {
     "name": "tools-fns",
     "version": "4.0.0",
-    "description": "An Open Source Library Gives You Small Helper Function To Help you be more productive",
-    "main": "./lib/esm/index.mjs",
-    "module": "./lib/esm/index.mjs",
-    "types": "./lib/types/index.d.ts",
+    "description": "An Open Source library Gives You Small Helper Function To Help you be more productive",
+    "main": "./dist/esm/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/types/index.d.ts",
     "exports": {
-        "types": "./lib/types/index.d.ts",
-        "import": "./lib/esm/index.mjs",
-        "require": "./lib/cjs/index.cjs"
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/esm/index.js",
+        "default": "./dist/esm/index.js",
+        "require": "./dist/cjs/index.js"
     },
     "files": [
-        "lib/**/*"
+        "./dist/**/*"
     ],
     "keywords": [
         "Js",
@@ -20,19 +21,17 @@
         "Debounce",
         "Cookies",
         "Notification",
-        "Location",
-        "QrCode",
-        "Helpers",
         "tools-fns"
     ],
     "author": "Anas Maher",
-    "license": "ISC",
+    "license": "MIT",
     "scripts": {
-        "test": "cd ./src/cjs && tsc && cd ../esm && tsc && cd ../../",
-        "dev": "git add --all && git commit -m \"Testing\" && git push"
+        "publish:github": "git push",
+        "publish:npm": "npm release"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
         "typescript": "^5.1.6"
-    }
+    },
+    "type": "module"
 }

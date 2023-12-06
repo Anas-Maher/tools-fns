@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["DOM", "ESNext"],
+        "module": "NodeNext",
+        "rootDir": "./",
+        "moduleResolution": "NodeNext",
+        "types": ["node", "../dist/types/index.d.ts"],
+        "allowJs": true,
+        "checkJs": true,
+        "outDir": "../dist/cjs",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "skipLibCheck": true,
+        "noUncheckedIndexedAccess": true
+    }
+}
